@@ -11,7 +11,7 @@ void main(void)
 
     if(pid>0)
     {
-        pid=wait(status);
+        pid=wait(&status);
         printf("Value of this parent process = %d and child of this process is %d\n",getpid(),pid);
     }
     else if(pid==0)
