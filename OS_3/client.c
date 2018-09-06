@@ -7,14 +7,14 @@ void main(void)
 {
     pid_t pid;
     int status;
-    char operand1,operand2,operator;
+    char operator[2], operand1[10] ,operand2[10];
     printf(">");
-    scanf("%c%c%c",&operand1,&operand2,&operator);
+    scanf("%s%s%s",operand1,&operator,operand2);
     pid = fork();
 
     if (pid == 0)
     {
-        execl("./server", &operand1, &operand2, &operator, NULL);
+        execl("./server","server", operand1,operator,operand2,NULL);
     }
     else if (pid>0)
     {
