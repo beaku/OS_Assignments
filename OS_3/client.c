@@ -9,12 +9,12 @@ void main(void)
     int status;
     char operator[2], operand1[10] ,operand2[10];
     printf(">");
-    scanf("%s%s%s",operand1,&operator,operand2);
+    scanf("%s %s %s",operand1,operator,operand2);
     pid = fork();
 
     if (pid == 0)
     {
-        execl("./server","server", operand1,operator,operand2,NULL);
+        execl("./server",operand1,operator,operand2,NULL);
     }
     else if (pid>0)
     {

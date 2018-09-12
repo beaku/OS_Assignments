@@ -10,14 +10,12 @@ int a;
 int b;
 int result=0;
 
-//a = atoi(arguments[0]);
-//b = atoi(arguments[2]);
+a = atoi(arguments[0]);
+b = atoi(arguments[2]);
 
-printf("%s %s",arguments[0],arguments[2]);
-
-/*if ( *arguments[1] == '+')
+if ( *arguments[1] == '+')
 result = a+b;
 else result = a-b;
-*/
-return 10; 
+
+return result; 
 }
