@@ -12,18 +12,19 @@ int main()
 
     char * namefifo = "/tmp/namefifo"; 
 
-    char arr2[80]; 
+    char str[100]; 
     while (1) 
     { 
         fd = open(namefifo, O_WRONLY); 
 
-        printf("give input\n");
-        fgets(arr2, 80, stdin); 
+        printf("Enter input: \n");
+        fgets(str, 100, stdin); 
 
-        write(fd, arr2, strlen(arr2)+1); 
-        char h[8] = "exit\n";
-        if( strcmp(arr2,h) == 0 )
+        write(fd, str, strlen(str)+1); 
+        char exit_str[6] = "exit\n";
+        if( strcmp(str,exit_str) == 0 )
         {
+            printf("Exiting\n");
             close(fd);
             return 0;
         }

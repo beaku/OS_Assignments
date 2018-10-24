@@ -14,16 +14,17 @@ int main()
   
     mkfifo(namefifo, 0666);
   
-    char str1[80]; 
+    char str[100]; 
     while (1) 
     { 
         fd1 = open(namefifo,O_RDONLY); 
-        read(fd1, str1, 80); 
+        read(fd1, str, 100); 
 
-        printf("User1: %s\n", str1); 
-        char h[8] = "exit\n";
-        if( strcmp(str1,h) == 0 )
+        printf("Waiting for input....Got it: %s\n", str); 
+        char exit_str[6] = "exit\n";
+        if( strcmp(str,exit_str) == 0 )
         {
+            printf("Exiting\n");
             close(fd1); 
             return 0;
         }
