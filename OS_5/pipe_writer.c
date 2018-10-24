@@ -10,12 +10,12 @@ int main()
 { 
     int fd; 
 
-    char * namefifo = "/tmp/namefifo"; 
+    char * pipename = "/tmp/pipe"; 
 
     char str[100]; 
     while (1) 
     { 
-        fd = open(namefifo, O_WRONLY); 
+        fd = open(pipename, O_WRONLY); 
 
         printf("Enter input: \n");
         fgets(str, 100, stdin); 

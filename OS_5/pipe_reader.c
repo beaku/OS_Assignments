@@ -10,14 +10,14 @@ int main()
 { 
     int fd1; 
 
-    char * namefifo = "/tmp/namefifo"; 
+    char * pipename = "/tmp/pipe"; 
   
-    mkfifo(namefifo, 0666);
+    mkfifo(pipename, 0666);
   
     char str[100]; 
     while (1) 
     { 
-        fd1 = open(namefifo,O_RDONLY); 
+        fd1 = open(pipename,O_RDONLY); 
         read(fd1, str, 100); 
 
         printf("Waiting for input....Got it: %s\n", str); 
