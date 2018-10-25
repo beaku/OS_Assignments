@@ -5,7 +5,7 @@ void f3(void *arg)
 {
     int i;
     for (i=1; i<10; i++) {
-        printf("thread 3: %d\n", i++);
+        printf("The value of thread 3 is: %d\n", i++);
         thread_yield();
     }
 }
